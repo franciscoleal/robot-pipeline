@@ -22,6 +22,12 @@ jobs:
           pip install robotframework
           pip install robotframework-requests
 
-      - name: Execução dos Testes de API
+      - name: Execução dos Testes
         run: |
           robot -d results tests
+      
+      - name: Salvando resultado dos testes
+        uses: actions/upload-artifact@v3
+        with:
+          name: resultado-testes
+          path: ./results
