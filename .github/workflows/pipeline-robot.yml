@@ -25,13 +25,19 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.12'
+      
+      - name: Instalando o nodejs
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
 
       - name: Instalação de Depencias do projeto
         run: |
           pip install robotframework
           pip install robotframework-requests
-          curl -fsSL https://fnm.vercel.app/install | bash
-          fnm use --install-if-missing 22
           pip install -U pip
           pip install robotframework-browser
           rfbrowser init
@@ -62,3 +68,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         if: always()
+
+    
