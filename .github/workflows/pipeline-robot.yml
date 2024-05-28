@@ -32,23 +32,26 @@ jobs:
 
       - name: Execução dos Testes
         run: |
-          robot -d results tests
+          robot --outputdir results/ tests/
       
       - name: Salvando resultado dos testes
         uses: actions/upload-artifact@v3
         if: always()
         with:
           name: resultado-testes
-          path: ./results
+          path: /results
       
       - name: Configurar Site do relatorio
         uses: actions/configure-pages@v2
+        if: always()
         
       - name: Upload do relatorio
         uses: actions/upload-pages-artifact@v1
+        if: always()
         with:
           path: results/
 
       - name: Subir site no Github Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        if: always()
