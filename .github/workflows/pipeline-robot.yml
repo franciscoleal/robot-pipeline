@@ -6,6 +6,7 @@ on: push
 
 jobs:
   test:
+    name: Testes de API
     runs-on: ubuntu-latest
 
     permissions:
@@ -29,6 +30,12 @@ jobs:
         run: |
           pip install robotframework
           pip install robotframework-requests
+          curl -fsSL https://fnm.vercel.app/install | bash
+          fnm use --install-if-missing 22
+          pip install -U pip
+          pip install robotframework-browser
+          rfbrowser init
+          
 
       - name: Execução dos Testes
         run: |
