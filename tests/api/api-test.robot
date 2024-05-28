@@ -1,13 +1,11 @@
 *** Settings ***
-Resource    ../../resources/api/common.resource
-
-
-*** Variables ***
+Resource    ../../resources/api/api.resource
 
 
 *** Test Cases ***
-Testando pipeline
+Testando API
     Mostrar um log de exemplo
+
 
 *** Keywords ***
 Mostrar um log de exemplo
