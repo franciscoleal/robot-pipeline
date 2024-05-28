@@ -8,6 +8,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://franciscoleal.github.io/robot-pipeline/report.html
+
     steps:
       - name: Projeto de Teste
         uses: actions/checkout@v3
@@ -32,3 +40,15 @@ jobs:
         with:
           name: resultado-testes
           path: ./results
+      
+      - name: Configurar Site do relatorio
+        uses: actions/configure-pages@v2
+        
+      - name: Upload do relatorio
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: results/
+
+      - name: Subir site no Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
