@@ -28,7 +28,7 @@ jobs:
       
       - name: Salvando resultado dos testes
         uses: actions/upload-artifact@v3
+        if: always()
         with:
-          if: always()
           name: resultado-testes
           path: ./results
