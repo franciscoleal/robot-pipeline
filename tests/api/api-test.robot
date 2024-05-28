@@ -10,3 +10,4 @@ Testando API
 *** Keywords ***
 Mostrar um log de exemplo
     Log    message=Testando Pipeline no Git Actions
+    Log    message=Apresentando a pipeline ao Carlão, capaz!!
