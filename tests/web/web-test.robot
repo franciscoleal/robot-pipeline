@@ -5,4 +5,4 @@ Resource    ../../resources/web/pages/web.resource
 Example Test
     New Page    https://playwright.dev
     Get Text    h1    contains    Playwright
-    Log    message=Testando PipeLine
+    Log    message=Testando PipeLine na Apresentação
