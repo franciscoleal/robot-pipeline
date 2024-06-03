@@ -5,3 +5,4 @@ Resource    ../../resources/web/web.resource
 Example Test
     New Page    https://playwright.dev
     Get Text    h1    contains    Playwright
+    

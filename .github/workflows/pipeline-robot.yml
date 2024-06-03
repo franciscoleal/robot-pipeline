@@ -51,7 +51,7 @@ jobs:
         with:
           name: resultado-testes
           path: /results
-      
+        
       - name: Configurar Site do relatorio
         uses: actions/configure-pages@v2
         if: always()
