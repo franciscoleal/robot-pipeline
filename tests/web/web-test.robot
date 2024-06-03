@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../resources/web/web.resource
+Resource    ../../resources/web/pages/web.resource
 
 *** Test Cases ***
 Example Test
