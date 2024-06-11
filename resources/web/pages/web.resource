@@ -1,3 +1,4 @@
 *** Settings ***
-Library   Browser
+Library    Browser
+Library    ScreenCapLibrary     
 

@@ -1,8 +1,14 @@
 *** Settings ***
-Resource    ../../resources/web/pages/web.resource
+Resource    ../../resources/main.resource
+
+Test Setup    Start Gif Recording
+Test Teardown    Stop Gif Recording
+
 
 *** Test Cases ***
-Example Test
-    New Page    https://playwright.dev
-    Get Text    h1    contains    Playwright
-    Log    message=Testando PipeLine na Apresentação
+Realizar Acesso ao Web Site Pet
+    Abrir Browser
+    Clicar no menu Cachorros
+    Clicar no menu Gatos
+    Clicar no menu de Recompra
+    Fechar Browser
