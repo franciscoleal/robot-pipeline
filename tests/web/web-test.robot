@@ -12,3 +12,10 @@ Realizar Acesso ao Web Site Pet
     Clicar no menu Gatos
     Clicar no menu de Recompra
     Fechar Browser
+
+Testando com a Library Browser
+    # Open Browser    url=https://playwright.dev    browser=chromium 
+    Browser.New Page    https://playwright.dev    
+    Browser.Get Text    h1    contains    Playwright
+    Log    message=Testando PipeLine na Apresentação
+
