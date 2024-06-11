@@ -12,5 +12,5 @@ Clicar no menu Gatos
     Click Element    xpath=${mnu_gato}
 
 Clicar no menu Cachorros
-    Wait Until Element Is Visible    xpath=${mnu_cachorro}
+    Wait Until Element Is Visible    xpath=${mnu_cachorro}    timeout=30s
     Click Element    xpath=${mnu_cachorro}

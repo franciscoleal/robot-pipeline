@@ -1,19 +1,27 @@
-# *** Settings ***
-# Resource        ../../resources/web/pages/Resource.robot
-# Suite Setup     Acessar blog robotizandotestes        
-# Suite Teardown  Fechar Navegador
-# Test Template   Validar pesquisa de postagens
+*** Settings ***
+Resource            login_resources.robot
 
-# *** Test Case ***                  Busca          Título do Post
+Suite Setup         Open my Browser
+Suite Teardown      Close Browsers
+Test Setup          Open Login Page
+Test Template       Invalid login
 
-# Pesquisar Post Premiere            introdução     Season Premiere: Introdução ao Robot Framework
-# Pesquisar Post Editores Ep.01      visual code    Season Editores - Ep. 02: Visual Studio Code
-# Pesquisar Post Tutoriais Ep.01     windows        Season Tutoriais - Ep. 01: Instalando o Robot Framework (Windows)
 
-# *** Keyword ***    
-# Validar pesquisa de postagens
-#     [Arguments]     ${BUSCA}        ${TITULO_POSTAGEM}
-#     Pesquisar a postagem pela palavra "${BUSCA}"
-#     Verificar resultado da pesquisa   ${TITULO_POSTAGEM}
-#     Clicar no post encontrado
-#     Verificar tela da postagem        ${TITULO_POSTAGEM}
+*** Test Cases ***    User    Passwort
+Right user empty pass    demo    ${EMPTY}
+Right user wrong pass    demo    FooBar
+Empty user right pass    ${EMPTY}    mode
+Empty user empty pass    ${EMPTY}    ${EMPTY}
+Empty user wrong pass    ${EMPTY}    FooBar
+Wrong user right pass    FooBar    mode
+Wrong user empty pass    FooBar    ${EMPTY}
+Wrong user wrong pass    FooBar    FooBar
+
+
+*** Keywords ***
+Invalid login
+    [Arguments]    ${username}    ${password}
+    Input username    ${username}
+    Input pwd    ${password}
+    click login button
+    Error page should be visible
