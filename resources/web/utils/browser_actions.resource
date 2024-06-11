@@ -4,8 +4,8 @@ Variables    ../data/browser_data.yaml
 
 *** Keywords ***
 Abrir Browser
-    Open Browser    url=${url}    browser=${browser}
-    Maximize Browser Window
+    SeleniumLibrary.Open Browser    url=${url}    browser=${browser}
+    SeleniumLibrary.Maximize Browser Window
 
 Fechar Browser
-    Close Browser
+    SeleniumLibrary.Close Browser
