@@ -41,6 +41,7 @@ jobs:
           rfbrowser init
           pip install robotframework-screencaplibrary
           pip install --upgrade robotframework-seleniumlibrary
+          pip install PyYAML
           
 
       - name: Execução dos Testes
