@@ -17,4 +17,4 @@ Mostrar um log de exemplo
     ${response}    GET    url=https://api-desafio-qa.onrender.com/json_1    headers=${headers}
     ${teste}    Generate Random String
     Log    message=${teste}
-    Log    message=Apresentando CI/CD ao Francisco
+    Log    message=Apresentando CI/CD ao Bruno
